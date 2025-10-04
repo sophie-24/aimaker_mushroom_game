@@ -185,6 +185,10 @@
     cursor: pointer;
     color: #fff;
   }
+  #end-btn-overlay {
+  background: linear-gradient(135deg, #43c68c, #2ca66d); /* 민트색 그라데이션 */
+}
+
   #restart-btn-overlay {
     background: linear-gradient(135deg, #ffb347, #ffcc33);
   }
@@ -329,7 +333,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
                document.getElementById('end-btn-overlay').addEventListener('click', () => {
     sessionStorage.clear();
-    alert("게임이 종료되었습니다. 감사합니다!");
+    alert("우측의 X표를 눌러 메인 화면으로 돌아가세요.");
     window.close(); // 브라우저 탭 닫기 (일부 환경에서만 동작)
 });
 
