@@ -178,9 +178,6 @@
     브라우저가 동영상을 지원하지 않습니다.
   </video>
 
-  <!-- 영상 시작 버튼 -->
-  <button id="playVideoBtn">▶️</button>
-
   <!-- 동영상 끝나고 안내 -->
   <div id="videoDesc">
     <div class="desc-box">
@@ -236,13 +233,6 @@ function showMushroom() {
     }
 }
 
-// ▶️ 영상 시작 버튼
-document.getElementById("playVideoBtn").onclick = function() {
-    const video = document.getElementById("introVideo");
-    video.style.display = "block";
-    video.play();
-    this.style.display = "none";
-};
 
 // 🎬 영상 끝난 뒤 → 설명 & 시작 버튼 보이기
 document.getElementById("introVideo").onended = function() {
