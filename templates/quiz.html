@@ -232,9 +232,6 @@
     <div id="result-container"></div>
   </div>
 
-  <a href="/">처음으로 돌아가기</a>
-  <button id="restart-btn">🔄 다시 풀기</button>
-
 <script>
 document.addEventListener('DOMContentLoaded', async function() {
     const quizArea = document.getElementById('quiz-area');
@@ -322,23 +319,20 @@ document.addEventListener('DOMContentLoaded', async function() {
                 const overlay = document.createElement("div");
                 overlay.id = "outro-overlay";
                 overlay.innerHTML = `
-                  <h2>퀴즈 완료!</h2>
-                  <p>최종 정답률: <b>${accuracy}%</b><br>(${correctCount} / ${questions.length})</p>
-                  <p>${resultMsg}</p>
-                  <button id="restart-btn-overlay">🔄 다시 풀기</button>
-                  <button id="home-btn-overlay">🏠 처음으로 돌아가기</button>
-                `;
+  <h2>퀴즈 완료!</h2>
+  <p>최종 정답률: <b>${accuracy}%</b><br>(${correctCount} / ${questions.length})</p>
+  <p>${resultMsg}</p>
+  <button id="end-btn-overlay">🎮 게임 끝내기</button>
+`;
+
                 document.body.appendChild(overlay);
 
-                document.getElementById('restart-btn-overlay').addEventListener('click', () => {
-                    sessionStorage.clear();
-                    window.location.reload();
-                });
+               document.getElementById('end-btn-overlay').addEventListener('click', () => {
+    sessionStorage.clear();
+    alert("게임이 종료되었습니다. 감사합니다!");
+    window.close(); // 브라우저 탭 닫기 (일부 환경에서만 동작)
+});
 
-                document.getElementById('home-btn-overlay').addEventListener('click', () => {
-                    sessionStorage.clear();
-                    window.location.href = "/";
-                });
             };
         }
     }
